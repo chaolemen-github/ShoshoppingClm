@@ -1,0 +1,231 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+
+//    multiDexEnabled true
+    //29.0.3
+    compileSdkVersion 28
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+//        applicationId "com.chaolemen.shoppingclm"
+        applicationId "com.example.liangxq.shopping"
+
+//        applicationId "com.android.knowme"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true//突破65535限制
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            // 设置支持的SO库架构
+//            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+//        }
+
+        //极光推送
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        //极光推送
+        manifestPlaceholders = [
+//                JPUSH_PKGNAME: "com.chaolemen.shoppingclm",
+JPUSH_PKGNAME: "com.example.liangxq.shopping",
+//                JPUSH_APPKEY : "6c444c181da49ffd607ebac5", //JPush 上注册的包名对应的 Appkey.
+JPUSH_APPKEY : "168bc3ce15b62b3fa2eb9721", //JPush 上注册的包名对应的 Appkey.
+JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        debug {
+            //设置签名文件
+            storeFile file('clm.jks')
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456"
+        }
+        release {
+            storeFile file('clm.jks')
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456"
+        }
+
+//        release {
+//            storeFile file('zhiwozhixiang.jks')
+//            keyAlias "bjqjqc"
+////            keyPassword System.getenv("zwzx_key_store_pw")
+////            storePassword System.getenv("zwzx_key_store_pw2")
+//            keyPassword "zhiwozhixiang@"
+//            storePassword "zhiwozhixiang@"
+//        }
+//
+//        debug {
+//            storeFile file('zhiwozhixiang.jks')
+//            keyAlias "bjqjqc"
+//            keyPassword "zhiwozhixiang@"
+//            storePassword "zhiwozhixiang@"
+//        }
+    }
+
+
+    buildTypes {
+
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //greendao配置  步骤5  在buildTypes下面添加
+    greendao {
+        //数据库版本号，升级时修改
+        schemaVersion 2
+        //生成的DAO，DaoMaster和DaoSession的包路径。默认与表实体所在的包路径相同
+        daoPackage 'com.chaolemen.shoppingclm.db'
+        //生成源文件的路径。默认源文件目录是在build目录中的(build/generated/source/greendao)
+        targetGenDir 'src/main/java'
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/', 'src/main/assets/province']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation('com.android.support:appcompat-v7:28.0.0', {
+        exclude group: 'com.android.support', module: 'design'
+    })
+    implementation('com.android.support.constraint:constraint-layout:1.1.3', {
+        exclude group: 'com.android.support', module: 'design'
+    })
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test:runner:1.0.2', {
+        exclude group: 'com.android.support', module: 'design'
+    })
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
+        exclude group: 'com.android.support', module: 'design'
+    })
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:27.1.0'
+    implementation project(path: ':mvplibrary')
+    implementation project(path: ':httplibrary')
+    implementation project(path: ':libumengsharelogin')
+    implementation project(path: ':zxingbin')
+
+    //greenDAO配置  步骤4
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
+    implementation 'org.greenrobot:greendao-generator:3.2.2'
+
+    // implementation 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+
+    //内存泄漏检测工具依赖
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+
+
+    // 下面各SDK根据宿主App是否使用相关业务按需引入。
+    // OAID目前为目前国内市场主流的Android Q设备标识，可根据需要选择。
+    // 友盟统计SDK
+//    implementation 'com.umeng.umsdk:common:8.0.2' // (必选)
+////    implementation 'com.umeng.umsdk:game:9.1.0+G' // 游戏统计SDK依赖(可选)
+//    implementation 'com.umeng.umsdk:asms:1.1.3' // asms包依赖(必选)
+//    implementation 'com.umeng.umsdk:crash:0.0.4' // native crash包依赖(必选)
+//
+//    implementation 'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
+//    implementation 'com.umeng.umsdk:oaid_mi:1.0.0' // (可选)
+//    implementation 'com.umeng.umsdk:oaid_oppo:1.0.4' // (可选)
+//    implementation 'com.umeng.umsdk:oaid_vivo:1.0.0.1' // (可选)
+
+//BottomNavigationBar底部导航
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
+
+//    ButterKnife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // banner 轮播图
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    // 图片框架依赖
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+
+    //卡片布局
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    //三角标签
+    implementation 'com.github.shts:TriangleLabelView:1.1.2'
+
+//    //画廊
+//    api 'com.github.crosswall:Android-Coverflow:release-v1.0.1'
+    implementation 'com.github.crosswall:Android-Coverflow:release-v1.0.4'
+
+    //万能适配器依赖
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+//    implementation project(':BasePop')
+
+    //购物车数量加减控件
+    implementation 'ren.qinc.numberbutton:numberbutton:0.0.1'
+    implementation 'com.zhy:flowlayout-lib:1.0.3'
+
+//65535
+    implementation 'com.android.support:multidex:1.0.3' //就是这句，添加进来
+//    implementation 'com.android.support:multidex:2.0.0' //就是这句，添加进来
+
+    //极光推送
+    implementation 'cn.jiguang.sdk:jpush:3.7.0'  // 此处以JPush 3.7.0 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.4.2'// 此处以JCore 2.4.2 版本为例。
+
+    //圆形imageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //选择弹窗
+    implementation 'com.bigkoo:alertview:1.0.3'
+
+    //相册选择框架
+//    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.8'
+
+
+    //收货地址三级联动
+    implementation 'com.contrarywind:Android-PickerView:4.1.6'
+    implementation 'com.google.code.gson:gson:2.6.2'
+
+    // 支付宝支付
+//    compile (name: 'alipaySdk-15.5.7-20181023110917', ext: 'aar')
+    compile (name: 'alipaySdk-15.7.9-20200727142846', ext: 'aar')
+}

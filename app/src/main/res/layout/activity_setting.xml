@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chaolemen.shoppingclm.user.SettingActivity">
+
+    <Button
+        android:id="@+id/tv_setting_finish"
+        android:text="退出登录"
+        android:layout_margin="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/dp_22"
+        android:background="@color/common_blue"
+        android:textColor="@color/common_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>

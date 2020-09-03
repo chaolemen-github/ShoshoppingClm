@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    tools:context=".category.fragments.DitailFragment">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_ditail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:background="@color/common_white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/common_bg"
+        app:layout_constraintBottom_toBottomOf="@id/banner_ditail" />
+
+    <TextView
+        android:id="@+id/tv_ditail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/banner_ditail" />
+
+    <TextView
+        android:id="@+id/tv_ditail_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        android:padding="@dimen/dp_5"
+        android:textColor="@color/common_red"
+        app:layout_constraintTop_toBottomOf="@id/tv_ditail_title" />
+
+    <TextView
+        android:id="@+id/tv_ditail_xuan"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/common_white"
+        android:text="已选"
+        android:paddingLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:textSize="@dimen/dp_10"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/tv_ditail_select"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_ditail_select" />
+
+    <TextView
+        android:id="@+id/tv_ditail_select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/common_white"
+        android:padding="@dimen/dp_5"
+        app:layout_constraintLeft_toRightOf="@id/tv_ditail_xuan"
+        app:layout_constraintRight_toLeftOf="@id/iv_ditail_more"
+        app:layout_constraintTop_toBottomOf="@id/tv_ditail_money" />
+
+    <ImageView
+        android:id="@+id/iv_ditail_more"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/common_white"
+        android:src="@mipmap/icon_gray_more"
+        android:paddingRight="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@id/tv_ditail_select"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_ditail_select" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_shadow_end_color"
+    tools:context="com.chaolemen.shoppingclm.cart.SettleActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_settle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/common_white" />
+
+    <ImageView
+        android:id="@+id/iv_settle_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:background="@mipmap/icon_back"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_settle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_settle" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_take"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/common_white"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_settle">
+
+        <TextView
+            android:id="@+id/tv_settle_site_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_settle_site_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_settle_site_title" />
+
+        <ImageView
+            android:id="@+id/iv_settle_site"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@mipmap/icon_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_settle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/common_white"
+        app:layout_constraintTop_toBottomOf="@id/constraint_take" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cardview_shadow_end_color"
+        app:layout_constraintTop_toBottomOf="@id/recycler_settle" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_settle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        app:layout_constraintTop_toBottomOf="@id/recycler_settle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/common_white"
+            android:padding="@dimen/dp_10"
+            android:text="支付配送"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10"
+            android:background="@color/common_white"
+            android:gravity="center_horizontal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在线支付" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="快递运输" />
+
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_settle_count"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:text="合计:￥0.00"
+        android:background="@color/common_white"
+        android:textColor="@color/common_red"
+        app:layout_constraintBottom_toBottomOf="@id/btn_settle_add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_settle_add"
+        app:layout_constraintTop_toTopOf="@id/btn_settle_add" />
+
+    <Button
+        android:id="@+id/btn_settle_add"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/common_red"
+        android:text="提交订单"
+        android:textColor="@color/common_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_white">
+
+
+    <ImageView
+        android:id="@+id/iv_pop_img"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pop_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:textColor="@color/common_red"
+        app:layout_constraintBottom_toTopOf="@id/tv_pop_text"
+        app:layout_constraintLeft_toRightOf="@id/iv_pop_img"
+        app:layout_constraintTop_toTopOf="@id/iv_pop_img" />
+
+    <TextView
+        android:id="@+id/tv_pop_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pop_img"
+        app:layout_constraintLeft_toRightOf="@id/iv_pop_img"
+        app:layout_constraintTop_toBottomOf="@id/tv_pop_title" />
+
+    <ImageView
+        android:id="@+id/iv_pop_close"
+        android:background="@mipmap/add_cart_pop_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="@dimen/dp_20"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/cardview_shadow_start_color"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pop_img" />
+
+    <TextView
+        android:id="@+id/tv_pop_banben"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="版本"
+        app:layout_constraintTop_toBottomOf="@id/iv_pop_img" />
+
+    <com.chaolemen.shoppingclm.category.viewGroup.XCFlowLayout
+        android:id="@+id/flowlayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_5"
+        app:layout_constraintBottom_toTopOf="@id/tv_pop_peizhi"
+        app:layout_constraintTop_toBottomOf="@id/tv_pop_banben"></com.chaolemen.shoppingclm.category.viewGroup.XCFlowLayout>
+
+    <TextView
+        android:id="@+id/tv_pop_peizhi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="配置"
+        app:layout_constraintBottom_toTopOf="@id/flowlayout_peizhi"
+        app:layout_constraintTop_toBottomOf="@id/flowlayout" />
+
+    <com.chaolemen.shoppingclm.category.viewGroup.XCFlowLayout
+        android:id="@+id/flowlayout_peizhi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_5"
+        app:layout_constraintBottom_toTopOf="@id/linear_pop"
+        app:layout_constraintTop_toBottomOf="@id/tv_pop_peizhi"></com.chaolemen.shoppingclm.category.viewGroup.XCFlowLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_pop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/btn_pop_add"
+        app:layout_constraintTop_toBottomOf="@id/flowlayout_peizhi">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="数据" />
+
+        <Button
+            android:id="@+id/btn_pop_jian"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_40"
+
+            android:background="@drawable/pop_bg"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/tv_pop_code"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/pop_bg"
+            android:gravity="center"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn_pop_jia"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/pop_bg"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_pop_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_red"
+        android:text="添加购物车"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/dp_18"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

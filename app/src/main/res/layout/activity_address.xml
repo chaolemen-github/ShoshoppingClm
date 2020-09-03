@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chaolemen.shoppingclm.cart.AddressActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_address"
+        android:background="@color/common_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/common_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/iv_address_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:background="@mipmap/icon_back"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_address"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_address" />
+
+    <TextView
+        android:id="@+id/tv_address_add"
+        android:text="新增地址"
+        app:layout_constraintTop_toTopOf="@id/toolbar_address"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_address"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/dp_20"
+        android:textColor="@color/common_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_address"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</android.support.constraint.ConstraintLayout>

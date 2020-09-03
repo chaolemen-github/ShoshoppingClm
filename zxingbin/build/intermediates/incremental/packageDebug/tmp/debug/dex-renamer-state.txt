@@ -1,0 +1,4 @@
+#Fri Aug 28 11:03:52 CST 2020
+base.0=D\:\\DSXDemo\\ShoppingClm\\zxingbin\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+path.0=classes.dex
+renamed.0=classes.dex

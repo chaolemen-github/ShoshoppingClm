@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp_120"
+    android:padding="@dimen/dp_5"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_rl_img"
+        android:scaleType="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80" />
+
+    <TextView
+        android:id="@+id/tv_rl_title"
+        android:hint="华为"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

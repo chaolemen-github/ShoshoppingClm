@@ -1,0 +1,149 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <!-- 搜索输入框样式-->
+    <style name="SearchHeaderEtStyle">
+        <item name="android:textColor">@color/common_white</item>
+        <item name="android:textColorHint">@color/common_white</item>
+
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:drawableLeft">@mipmap/icon_search</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- 带搜索的Header样式 -->
+    <style name="SearchHeaderStyle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/common_blue</item>
+        <item name="android:paddingTop">@dimen/dp_5</item>
+        <item name="android:paddingRight">@dimen/dp_15</item>
+        <item name="android:paddingBottom">@dimen/dp_5</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_50</item>
+    </style>
+
+    <!--&lt;!&ndash; 搜索输入框样式&ndash;&gt;-->
+    <!--<style name="SearchHeaderEtStyle">-->
+        <!--<item name="android:textColor">@color/common_white</item>-->
+        <!--<item name="android:textColorHint">@color/common_white</item>-->
+        <!--<item name="android:background">@drawable/home_header_corner_bg</item>-->
+        <!--<item name="android:paddingLeft">@dimen/common_padding</item>-->
+        <!--<item name="android:paddingTop">@dimen/common_padding_small</item>-->
+        <!--<item name="android:paddingBottom">@dimen/common_padding_small</item>-->
+        <!--<item name="android:layout_width">0dp</item>-->
+        <!--<item name="android:layout_height">match_parent</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/common_margin_small</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/common_margin</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/common_margin_small</item>-->
+        <!--<item name="android:drawableLeft">@mipmap/icon_search</item>-->
+        <!--<item name="android:drawablePadding">@dimen/common_padding_middle</item>-->
+        <!--<item name="android:layout_weight">1</item>-->
+        <!--<item name="android:textCursorDrawable">@null</item>-->
+        <!--<item name="android:maxLines">1</item>-->
+    <!--</style>-->
+
+    <style name="TabsStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="tabIndicatorColor">@color/common_white</item>
+        <item name="tabBackground">@drawable/tab_selector</item>
+        <item name="tabTextAppearance">@dimen/sp_16</item>
+        <item name="tabTextColor">@color/text_light_dark</item>
+        <item name="tabSelectedTextColor">@color/common_white</item>
+    </style>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/dp_18</item>
+    </style>
+
+    <style name="MeOrderLabelStyle">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/common_padding_small</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <!-- "我的" 单项样式 -->
+    <style name="MeItemStyle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:paddingLeft">@dimen/common_padding</item>
+        <item name="android:paddingTop">@dimen/common_padding_middle</item>
+        <item name="android:paddingRight">@dimen/common_padding</item>
+        <item name="android:paddingBottom">@dimen/common_padding_middle</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableRight">@mipmap/icon_arrow</item>
+        <item name="android:drawablePadding">@dimen/common_padding_small</item>
+    </style>
+
+    <style name="FullBtnStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/common_white</item>
+        <item name="android:background">@drawable/btn_common_selector</item>
+        <item name="android:padding">@dimen/common_padding_middle</item>
+        <item name="android:layout_margin">@dimen/common_margin</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <!-- 竖向分隔线 带上下间距 -->
+    <style name="DividerFixedWidth.MarginTopBottom" parent="@style/DividerFixedWidth">
+        <item name="android:layout_marginTop">@dimen/common_margin_middle</item>
+        <item name="android:layout_marginBottom">@dimen/common_margin_middle</item>
+    </style>
+
+    <!-- 竖向分隔线 -->
+    <style name="DividerFixedWidth">
+        <item name="android:background">@color/common_divider</item>
+        <item name="android:layout_width">@dimen/common_divider_width</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- 横向分隔线 -->
+    <style name="DividerFixedHeight">
+        <item name="android:background">@color/common_divider</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_divider_height</item>
+    </style>
+
+    <!-- 用户信息单行 -->
+    <style name="user_info_line_style">
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:paddingLeft">@dimen/common_padding</item>
+        <item name="android:paddingRight">@dimen/common_padding</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_line_height</item>
+    </style>
+
+    <!-- 用户信息标签区域 -->
+    <style name="user_info_label_style">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">#ff868686</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!-- 用户信息内容区域 -->
+    <style name="user_info_content_style" parent="@style/user_info_label_style">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/text_normal</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+</resources>

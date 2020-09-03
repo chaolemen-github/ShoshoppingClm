@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_shadow_end_color"
+    tools:context="com.chaolemen.shoppingclm.user.RegisterActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_blue"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_register_finish"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:src="@drawable/umeng_socialize_back_icon"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_register"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_register" />
+
+
+    <LinearLayout
+        android:id="@+id/linear_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@color/common_white"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_register">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_register_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableLeft="@mipmap/icon_phone"
+                android:hint="请输入手机号" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:padding="@dimen/dp_3"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_start_color" />
+
+            <TextView
+                android:id="@+id/tv_register_yanzheng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:text="获取验证码"
+                android:textColor="@color/common_blue" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/cardview_shadow_start_color" />
+
+        <EditText
+            android:id="@+id/et_register_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@mipmap/icon_verify_code"
+            android:hint="请输入短信验证码" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/cardview_shadow_end_color" />
+
+        <EditText
+            android:id="@+id/et_register_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@mipmap/icon_pwd"
+            android:hint="请输入密码" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/cardview_shadow_start_color" />
+
+        <EditText
+            android:id="@+id/et_register_newPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@mipmap/icon_pwd"
+            android:hint="请再次输入密码" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@color/common_blue"
+        android:text="注册"
+        android:textColor="@color/common_white"
+        app:layout_constraintTop_toBottomOf="@id/linear_register" />
+
+</android.support.constraint.ConstraintLayout>

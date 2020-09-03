@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".category.DitailActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_blue"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout_ditail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_ditail"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/ic_chevron_left_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/tabLayout_ditail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tabLayout_ditail" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_ditail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/linear_ditail"
+        app:layout_constraintTop_toBottomOf="@id/cl" />
+
+    <LinearLayout
+        android:id="@+id/linear_ditail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_ditail_add">
+
+        <TextView
+            android:id="@+id/tv_ditail_find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/icon_favorite_nor"
+            android:gravity="center"
+            android:text="分享" />
+
+        <TextView
+            android:id="@+id/tv_ditail_shopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/btn_nav_cart_normal"
+            android:gravity="center"
+            android:text="购物车" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/tv_ditail_add"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/common_red"
+        android:gravity="center"
+        android:padding="@dimen/dp_5"
+        android:text="加入购物车"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/linear_ditail"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/linear_ditail" />
+
+
+</android.support.constraint.ConstraintLayout>

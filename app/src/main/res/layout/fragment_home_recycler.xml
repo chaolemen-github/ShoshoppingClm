@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/re"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="71.0dip"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/home_recycler_img"
+            android:layout_width="@dimen/dp_71"
+            android:layout_height="@dimen/dp_71"
+            android:scaleType="fitXY" />
+
+        <jp.shts.android.library.TriangleLabelView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            app:backgroundColor="@color/common_red"
+            app:corner="rightTop"
+            app:labelBottomPadding="5.0dip"
+            app:labelCenterPadding="0.0dip"
+            app:labelTopPadding="10.0dip"
+            app:primaryText="折扣"
+            app:primaryTextSize="10.0sp" />
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/home_recycler_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="123.00"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="@id/re"
+        app:layout_constraintRight_toRightOf="@id/re"
+        app:layout_constraintTop_toBottomOf="@id/re" />
+
+    <TextView
+        android:id="@+id/home_recycler_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$1000.00"
+        android:textColor="#D9D9D9"
+        app:layout_constraintLeft_toLeftOf="@id/re"
+        app:layout_constraintRight_toRightOf="@id/re"
+        app:layout_constraintTop_toBottomOf="@id/home_recycler_text" />
+
+
+</android.support.constraint.ConstraintLayout>
